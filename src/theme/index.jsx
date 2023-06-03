@@ -6,26 +6,31 @@ export const Container = styled.div`
   margin: 0 auto;
   box-shadow: 0 5px 25px #00000035;
   border: 8px;
-  padding: 16px;
   position: relative;
+  background-color: #EDEDED;
 `;
 
 export const ContainerScroll = styled.div`
-    width: calc(100% - 32px);
-    height: calc(100% - 88px);
+    width: 100%;
+    height: calc(100% - 132px);
     overflow: auto;
     position: absolute;
     bottom: 16px;
-    left: 16px;
+    left: 0;
 `;
 
+export const Header = styled.header`
+  padding: 15px;
+  background-color: blueviolet;
+  border-radius: 0 0 20px 20px;
+`;
 
 export const Row = styled.div`
   width: 100%;
   display: flex;
   gap: 10px;
-  margin-bottom: 26px;
   &.list-item {
+    background-color: white;
     margin-bottom: 6px;
     border-radius: 5px;
     box-shadow: 0 2px 10px 00000015;
@@ -53,13 +58,17 @@ export const Button = styled.button`
   background-color: blueviolet;
   color: #fff;
   font-size: 24px;
-  border: 0;
+  border: 2px solid white;
   border-radius: 8px;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-
+  cursor: pointer;
+  transition-duration: 300ms;
+  &:hover{
+    background-color: #6720aa;
+  }
   &.outline {
     border: 2px solid blueviolet;
     color: blueviolet;
