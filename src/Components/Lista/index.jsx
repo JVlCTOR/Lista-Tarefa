@@ -8,22 +8,16 @@ import Alert from "../Alert";
 const Lista = () => {
   const [lista, setLista] = useState([]);
   const [item, setItem] = useState("");
-  const [alert, setAlert] = useState({});
+  const {alert, setAlert} = useContext(LoginContext)
   const inserirItem = () => {
       let empty = item === '';
       let existe = lista.find((cadaItem => cadaItem === item));
       if(empty){
         setAlert({titulo: "Alerta", mensagem: "digite algo para salvar", active: true});
-        setTimeout(() => {
-          setAlert({active: false})
-        }, 3000)
         return;
       }
       if(existe){
         setAlert({titulo: "Alerta", mensagem: "Existe item já existe!", active: true});
-        setTimeout(() => {
-          setAlert({active: false})
-        }, 3000)
         return
       }
       setLista([...lista, item]);
